@@ -1,0 +1,1 @@
+I built this custom video player with only pure vanilla JavaScript and the HTML5 Media API. The transcript under the video player will highlight its sentences as the video progresses. The user can also click on any sentence in the transcript and the video will scrub to the appropriate time.

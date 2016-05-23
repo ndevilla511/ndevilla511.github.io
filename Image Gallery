@@ -1,0 +1,1 @@
+In this project, I created a photo gallery with added interactivity using jQuery. When the user clicks on a thumbnail, a lightbox will appear and display a larger version of the image and a caption underneath. I also added a search bar at the top, which allows the user to filter through the photos using search terms.
