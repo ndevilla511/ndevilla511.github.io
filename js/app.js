@@ -60,6 +60,7 @@ $(".project-thumbnail").click(function() {
     var project = $(this).data().projectName;
     console.log(project);
     $overlay.fadeIn(200);
+    $('body').css('overflow-y', 'hidden');
     $projectTitle.text(projectsList[project].title);
     $projectImage.attr('src', 'img/' + project + '.png');
     $projectInfo.text(projectsList[project].description);
@@ -69,7 +70,7 @@ $(".project-thumbnail").click(function() {
 
 //Clicking the overlay or the x in the corner will close the lightbox and hide the overlay
 $(".close").click(function(e) {
-
+    $('body').css('overflow-y', 'auto');
     //this if conditional prevents the click event from activating on any of the overlay div's children (except for the x)
     if (e.target === this) {
         $overlay.fadeOut(200, function() {
