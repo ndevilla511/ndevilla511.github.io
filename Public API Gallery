@@ -1,1 +1,0 @@
-I built this album gallery utilizing AJAX. All the data about album thumbnails, large album art, track lists, and artists is pulled using AJAX calls to Spotify's public API and is displayed in the lightbox featured in the image gallery project.

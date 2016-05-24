@@ -53,7 +53,7 @@ a:visited {
 header {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: auto;
     /*background: url("../img/headerbackground2.png");*/
     /*background-position: center;*/
     /*background-attachment: fixed;*/
@@ -306,11 +306,9 @@ nav ul li {
     text-align: center;
 }
 .about {
-    padding: 0 1em;
-    /*background-image: url("../img/headerbackground3.png");*/
-    /*background-attachment: fixed;*/
+    padding: 0 1em 2em 1em;
     color: #222;
-    height: 110vh;
+    height: auto;
 }
 
 .profile-pic {
@@ -426,6 +424,7 @@ footer {
         letter-spacing: 15px;
     }
 
+
     header span {
         font-size: 1.2em;
     }
@@ -456,6 +455,7 @@ footer {
         padding: 15px 10px;
     }
 
+
     .blurb-container {
         max-width: 600px;
     }
@@ -479,6 +479,15 @@ footer {
 }
 
 @media (min-width: 1024px) {
+
+    header {
+        height: 100vh;
+    }
+
+    .about {
+        height: 110vh;
+        padding: 0 1em;
+    }
 
     .blurb-container {
         text-align: center;
