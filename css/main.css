@@ -138,6 +138,7 @@ nav {
 nav a {
     width: 100%;
     padding: 15px 50px;
+    color: #d3d3d3;
 }
 
 nav a:hover {
