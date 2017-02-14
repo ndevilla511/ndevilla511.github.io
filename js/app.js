@@ -37,7 +37,21 @@ var projectsList = {
         description: "Here, I took a mock photography site that was initially over 11MB in size with 43 HTTP requests and reduced it to just over 6KB with 22 HTTP requests. I was able to do this by optimizing the site's image files, replacing any icon image files with svgs, and replacing font files with fonts supplied on Google Fonts. In addition, I also implemented the gulp.js taskrunner to combine and minify JavaScript and CSS files, as well as automate the site production process.",
         githubLink: "https://github.com/ndevilla511/Project-11---Performance-Optimization",
         siteLink: "http://ndevilla511.github.io/Project-11---Performance-Optimization/"
+    },
+    attainr: {
+        title: "Goal Setting/Tracking Web App",
+        description: "I built this goal setting and tracking single-page web application using AngularJS. I set up different views for the login, sign up, and goal timeline. Users can make and update goals in real time. This app also utilizes momentjs for time manipulation, Bootstrap, and Google's Firebase service for the backend.",
+        githubLink: "https://github.com/ndevilla511/attainr",
+        siteLink: "http://ndevilla511.github.io/attainr"
+    },
+    quoteGenerator: {
+        title: "Quote Generator",
+        description: "I built this goal setting and tracking single-page web application using AngularJS. I set up different views for the login, sign up, and goal timeline. Users can make and update goals in real time. This app also utilizes momentjs for time manipulation, Bootstrap, and Google's Firebase service for the backend.",
+        githubLink: "https://github.com/ndevilla511/quote-generator",
+        siteLink: "http://ndevilla511.github.io/quote-generator"
     }
+
+
 };
 
 var $overlay = $('<div id="overlay" class="close"></div>');
@@ -74,7 +88,7 @@ $(".close").click(function(e) {
     //this if conditional prevents the click event from activating on any of the overlay div's children (except for the x)
     if (e.target === this) {
         $overlay.fadeOut(200, function() {
-            $(".project-screenshot").src = "";
+            $projectImage.attr('src', '');
             $(".lightbox-link").attr('href', "");
             $("#project-title, #project-description").empty();
         });
@@ -87,17 +101,23 @@ $(".close").click(function(e) {
 var $navicon = $('.navicon');
 var $navMenu = $('#nav-menu-container');
 
-
+//click event that toggles the exit-mobile class for the navicon and the mobile-menu-on class for the navigation menu and slides it down
 $navicon.click(function() {
     $navicon.toggleClass('exit-mobile');
     $navMenu.slideToggle().toggleClass('mobile-menu-on');
 });
 
+//when the window resizes
 $(window).resize(function() {
+    //if the window is more than 768 pixels wide
     if ($(window).width() > 768) {
+        //remove the exit-mobile class from the navicon
         $navicon.removeClass('exit-mobile');
+        //slide the navigation menu down
         $navMenu.slideDown();
+        //else if the window is less than 768 pixels wide and the navicon doesn't have the class exit mobile
     } else if($(window).width() < 768 && !$navicon.hasClass('exit-mobile')) {
+        //slide the navmenu up
         $navMenu.slideUp();
     }
 });
@@ -117,24 +137,45 @@ $navLink.click(function() {
     }
 });
 
-$(window).scroll(function() {
+var a = $('.portfolio').position()['top'];
+
+function highLightNav() {
     $('.navlink').removeClass('current');
     var scrollPosition = window.scrollY;
     if (scrollPosition < $('.portfolio').position()['top']) {
-        $('.navlink:eq(2)').addClass('current');
+        $('.navlink:eq(0)').addClass('current');
         if ($(window).width() < 768) {
             $navicon.removeClass('exit-mobile');
             $navMenu.slideUp().removeClass('mobile-menu-on');
         }
     } else if (scrollPosition >= $('.portfolio').position()['top'] && scrollPosition < $('.about').position()['top']) {
-        $('.navlink:eq(3)').addClass('current');
+        $('.navlink:eq(1)').addClass('current');
     } else if (scrollPosition >= $('.about').position()['top'] && scrollPosition < ($('.contact').position()['top'] - 200)) {
-        $('.navlink:eq(4)').addClass('current');
+        $('.navlink:eq(2)').addClass('current');
     } else if (scrollPosition >= ($('.contact').position()['top'] - 200)) {
-        $('.navlink:eq(5)').addClass('current');
+        $('.navlink:eq(3)').addClass('current');
+    }
+}
+
+$(document).scroll(function(){
+    if($(this).scrollTop() >= a)
+    {
+        $('#navigation').css({"background":"rgba(0,0,0,.8)"});
+    } else {
+        $('#navigation').css({"background":"transparent"});
     }
 });
 
+$(window).scroll(function() {
+    highLightNav();
+});
+
+$(window).load(function() {
+    highLightNav();
+    console.log("done");
+});
+
+//Parallax settings
 
 $('header').parallax({imageSrc: 'img/headerbackground2.png', speed: '0.2'});
 $('.about').parallax({imageSrc: 'img/aboutbackground.jpg', speed: '0.2', position: 'top left'});
