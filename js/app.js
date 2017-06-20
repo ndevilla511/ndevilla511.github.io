@@ -40,7 +40,7 @@ var projectsList = {
     },
     attainr: {
         title: "Goal Setting/Tracking Web App",
-        description: "I built this goal setting and tracking single-page web application using AngularJS. I set up different views for the login, sign up, and goal timeline. Users can make and update goals in real time. This app also utilizes momentjs for time manipulation, Bootstrap, and Google's Firebase service for the backend.",
+        description: "I built this goal setting and tracking CRUD single-page web application using AngularJS. I set up different views for the login, sign up, and goal timeline. Users can make and update goals in real time. This app also utilizes momentjs for time manipulation, Bootstrap, and Google's Firebase service for the backend.",
         githubLink: "https://github.com/ndevilla511/attainr",
         siteLink: "http://ndevilla511.github.io/attainr"
     },
@@ -49,6 +49,12 @@ var projectsList = {
         description: "I built this goal setting and tracking single-page web application using AngularJS. I set up different views for the login, sign up, and goal timeline. Users can make and update goals in real time. This app also utilizes momentjs for time manipulation, Bootstrap, and Google's Firebase service for the backend.",
         githubLink: "https://github.com/ndevilla511/quote-generator",
         siteLink: "http://ndevilla511.github.io/quote-generator"
+    },
+    spaBlog: {
+        title: "Single Page Blog MEAN Stack Application",
+        description: "This is a single page application for viewing and creating blog posts. It uses AngularJS for the front end, node.js and Express for the server and MongoDB for the database. It is hosted on the Openshift platform.",
+        githubLink: "https://github.com/ndevilla511/nodejs-ex",
+        siteLink: "http://mean-trail-blog-app-mean-trail-blog.7e14.starter-us-west-2.openshiftapps.com"
     }
 
 
